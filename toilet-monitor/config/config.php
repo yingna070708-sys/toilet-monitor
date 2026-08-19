@@ -7,7 +7,7 @@
  * that sub-path, e.g. '/toilet-monitor'. If it lives at the web
  * root, leave it as an empty string.
  */
-define('BASE_URL', './toilet/');
+define('BASE_URL', 'https://khoryingna.kolejsynergy.com/l/toilet/');
 
 define('APP_NAME', 'Toilet Cleanliness Monitoring System');
 
