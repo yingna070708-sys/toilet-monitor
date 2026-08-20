@@ -15,10 +15,10 @@
 require_once __DIR__ . '/config/config.php';
 
 $DB_HOST = 'localhost';
-$DB_NAME = 'toilet_monitor';
-$DB_USER = 'root';
-$DB_PASS = '1234';
-$DB_PORT = 3307;
+$DB_NAME = 'synergy1_khoryingna_schoolnotes';
+$DB_USER = 'synergy1_yenping';
+$DB_PASS = 'R.zb0ZwEuGZ}*fW2';
+$DB_PORT = 3306;
 
 $messages = [];
 $errorMsg = null;
