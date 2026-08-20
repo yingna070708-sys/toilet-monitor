@@ -7,8 +7,7 @@
  * that sub-path, e.g. '/toilet-monitor'. If it lives at the web
  * root, leave it as an empty string.
  */
-define('BASE_URL', 'https://khoryingna.kolejsynergy.com/toilet-monitor');
-
+define('BASE_URL', 'https://khoryingna.kolejsynergy.com/toilet_new');
 define('APP_NAME', 'Toilet Cleanliness Monitoring System');
 
 // Absolute filesystem path to the uploads folder, and its public URL path.
