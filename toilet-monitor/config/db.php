@@ -8,7 +8,7 @@ $DB_HOST = 'localhost';
 $DB_NAME = 'synergy1_khoryingna_schoolnotes';
 $DB_USER = 'synergy1_yenping';
 $DB_PASS = 'R.zb0ZwEuGZ}*fW2';
-$DB_PORT = 3306;
+$DB_PORT = 3307;
 
 try {
     $pdo = new PDO(
