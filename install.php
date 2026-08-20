@@ -31,21 +31,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             // Connect without a database first, in case it doesn't exist yet.
-            $pdoRoot = new PDO("mysql:host={$DB_HOST};port={$DB_PORT};charset=utf8mb4", $DB_USER, $DB_PASS, [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            ]);
-            $sql = file_get_contents(__DIR__ . '/schema.sql');
-            $sql = str_replace("\r\n", "\n", $sql);
-            // Strip full-line comments first so they can never swallow the statement that follows them.
-            $lines = array_filter(explode("\n", $sql), fn($line) => !str_starts_with(trim($line), '--'));
-            $sql = implode("\n", $lines);
-            // Now split into individual statements on semicolons (schema.sql has no semicolons inside string data).
-            $statements = array_filter(array_map('trim', explode(';', $sql)));
-            foreach ($statements as $stmt) {
-                if ($stmt === '') continue;
-                $pdoRoot->exec($stmt);
-            }
-            $messages[] = 'Database and tables created (or already existed).';
+            // $pdoRoot = new PDO("mysql:host={$DB_HOST};port={$DB_PORT};charset=utf8mb4", $DB_USER, $DB_PASS, [
+            //     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            // ]);
+            // $sql = file_get_contents(__DIR__ . '/schema.sql');
+            // $sql = str_replace("\r\n", "\n", $sql);
+            // // Strip full-line comments first so they can never swallow the statement that follows them.
+            // $lines = array_filter(explode("\n", $sql), fn($line) => !str_starts_with(trim($line), '--'));
+            // $sql = implode("\n", $lines);
+            // // Now split into individual statements on semicolons (schema.sql has no semicolons inside string data).
+            // $statements = array_filter(array_map('trim', explode(';', $sql)));
+            // foreach ($statements as $stmt) {
+            //     if ($stmt === '') continue;
+            //     $pdoRoot->exec($stmt);
+            // }
+            // $messages[] = 'Database and tables created (or already existed).';
 
             $pdo = new PDO("mysql:host={$DB_HOST};port={$DB_PORT};dbname={$DB_NAME};charset=utf8mb4", $DB_USER, $DB_PASS, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
